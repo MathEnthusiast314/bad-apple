@@ -1,0 +1,11 @@
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function toFracs(split) {
+  if (split.length == 1) {
+    return split[0]
+  } else {
+    return `\\frac{${toFracs(split.slice(0,split.length/2))}}{${toFracs(split.slice(split.length/2))}}`
+  }
+}
